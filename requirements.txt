@@ -1,0 +1,7 @@
+pymongo==4.3.3
+numpy
+Flask
+Flask-Cors
+pandas
+azure-keyvault-secrets
+azure-identity

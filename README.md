@@ -5,9 +5,9 @@ Descripción general
 
 La API se encarga de realizar predicciones sobre el atraso de los vuelos comerciales, utilizando dos modelos de inteligencia artificial. Los modelos disponibles son Random Forest y Red Neuronal.
 
-#Endpoints
+# Endpoints
 
-##/rf
+## /rf
 
 Método: POST
 
@@ -45,7 +45,7 @@ json
   "value": 10
 }
 
-##/torch
+## /torch
 
 Método: POST
 

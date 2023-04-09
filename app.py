@@ -5,7 +5,7 @@ from flask_cors import CORS
 import pandas as pd
 import pickle
 from zipfile import ZipFile
-
+import json
 
 model_rf_extract = ZipFile('./models/model_rf.zip')
 model_rf_extract.extract('model_rf.pickle', './models/')
@@ -35,13 +35,14 @@ def str_2_model(input_model, type = "sklearn"):
 
 
 @app.route('/torch',methods = ['POST', 'GET'])
-def pytorch():
-  input_model = request.form.to_dict(flat=False)
-  print(input_model)
+def py_torch():
+  input_model = request.data
+  input_model = json.loads(input_model)
   input_model = str_2_model(input_model, "pytorch")
-
+  
   with torch.no_grad():
     output = torch_model(input_model)
+    
 
   result = {'value': output.item()}
   return jsonify(result)
@@ -49,12 +50,13 @@ def pytorch():
 
 @app.route('/rf',methods = ['POST', 'GET'])
 def rf():
+  input_model = request.data
+  input_model = json.loads(input_model)
+  input_model = str_2_model(input_model, "sklearn")
   try:
-    input_model = request.form.to_dict(flat=False)
-    input_model = str_2_model(input_model, "sklearn")
     
     output = rf_model.predict(input_model)
-    print(output)
+    
     result = {'value': output.item()}
   except:
     result = {}

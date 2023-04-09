@@ -88,7 +88,8 @@ Combinación de modelos
 La red neuronal se utiliza junto con un modelo de clasificación basado en Random Forest para realizar la clasificación de los vuelos. El modelo de Random Forest se utiliza como modelo de backup en caso de que la red neuronal no pueda realizar la clasificación.
 
 Para combinar los modelos, se utiliza un modelo híbrido llamado AutoencoderClassifier, que combina el autoencoder y el modelo de clasificación en una sola red neuronal. En primer lugar, los datos de entrada se procesan mediante el autoencoder para obtener una representación más pequeña, y luego se utiliza la salida del autoencoder como entrada para el modelo de clasificación. La salida final de la red neuronal es la salida del modelo de clasificación.
-Uso de la API
+
+# Uso de la API
 
 La API proporciona dos endpoints para realizar la predicción del retraso de los vuelos:
 

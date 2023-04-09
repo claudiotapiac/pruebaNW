@@ -24,6 +24,7 @@ torch_model.eval()
 
 
 def str_2_model(input_model, type = "sklearn"):
+  input_model = input_model['values']
   for i, value in enumerate(input_model):
     input_model[i] = float(value)
   if type == "pytorch":
@@ -33,10 +34,10 @@ def str_2_model(input_model, type = "sklearn"):
   return input_model
 
 
-@app.route('/torch/',methods = ['POST', 'GET'])
+@app.route('/torch',methods = ['POST', 'GET'])
 def pytorch():
   input_model = request.form.to_dict(flat=False)
-  input_model = input_model['values']
+  print(input_model)
   input_model = str_2_model(input_model, "pytorch")
 
   with torch.no_grad():
@@ -46,15 +47,14 @@ def pytorch():
   return jsonify(result)
 
 
-@app.route('/rf/',methods = ['POST', 'GET'])
+@app.route('/rf',methods = ['POST', 'GET'])
 def rf():
   try:
     input_model = request.form.to_dict(flat=False)
-    input_model = input_model['values']
     input_model = str_2_model(input_model, "sklearn")
     
     output = rf_model.predict(input_model)
-
+    print(output)
     result = {'value': output.item()}
   except:
     result = {}

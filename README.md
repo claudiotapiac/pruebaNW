@@ -12,7 +12,7 @@ La API se encarga de realizar predicciones sobre el atraso de los vuelos comerci
 Método: POST
 
 Este endpoint se encarga de realizar la predicción del atraso utilizando el modelo de Random Forest.
-Input
+### Input
 
 El input que espera el endpoint es un JSON con un arreglo de valores numéricos. El arreglo debe tener 8 elementos, que corresponden a las siguientes características:
 
@@ -33,7 +33,7 @@ json
   "values": [10.5, 3, 4, 2, 4, 7, 120, 750]
 }
 
-Output
+### Output
 
 El output que devuelve el endpoint es un JSON con la predicción del modelo de Random Forest en formato numérico. El valor predicho representa el atraso en minutos del vuelo.
 
@@ -62,7 +62,7 @@ json
   "values": [10.5, 3, 4, 2, 4, 7, 120, 750]
 }
 
-Output
+### Output
 
 El output que devuelve el endpoint es un JSON con la predicción del modelo de Red Neuronal en formato numérico. El valor predicho representa la probabilidad de que el vuelo tenga un atraso mayor a 15 minutos.
 

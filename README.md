@@ -74,7 +74,7 @@ json
   "value": 0.2
 }
 
-Red Neuronal
+# Modelo de Red Neuronal
 
 La red neuronal implementada en este proyecto está basada en un autoencoder, que es una arquitectura de red neuronal utilizada en el aprendizaje no supervisado de datos. Esta red está diseñada para aprender una representación de los datos de entrada, en este caso, las características de los vuelos, y posteriormente utilizar esta representación para realizar una clasificación binaria (retraso o no retraso).
 

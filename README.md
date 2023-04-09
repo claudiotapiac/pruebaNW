@@ -7,7 +7,7 @@ La API se encarga de realizar predicciones sobre el atraso de los vuelos comerci
 
 # Endpoints
 
-## /rf
+##  /rf
 
 Método: POST
 

@@ -42,7 +42,7 @@ Ejemplo:
 json
 
 {
-  "value": 10
+  "value": 1
 }
 
 ## /torch
